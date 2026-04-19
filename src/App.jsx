@@ -230,7 +230,7 @@ const PLATFORMS = {
   },
 };
 
-// ─── Products ─────────────────────────────────────────────────────────────────
+// ─── Products ─────────────────────���───────────────────────────────────────────
 const PRODUCTS = [
   {
   id: "VTI_VXUS",
@@ -649,13 +649,13 @@ function PficCalculator() {
   ))}
   </div>
   <div style={{ marginTop: 12, padding: "8px 12px", background: "#fef9ec", borderRadius: 8, border: "1px solid #fde68a", fontSize: 11, color: "#92400e" }}>
-  Note: Illustrative only — assumes 7% annual growth, 37% US ordinary income rate + estimated PFIC interest charge vs. 20% long-term CGT. Actual tax depends on your specific situation. This is not tax advice. Consult a US-qualified CPA.
+  Note: Illustrative only ��� assumes 7% annual growth, 37% US ordinary income rate + estimated PFIC interest charge vs. 20% long-term CGT. Actual tax depends on your specific situation. This is not tax advice. Consult a US-qualified CPA.
   </div>
   </div>
   );
 }
 
-// ─── Portfolio Diagnostic ─────────────────────────────────────────────────────
+// ─── Portfolio Diagnostic ────────────────────────────────────────────��────────
 const DIAG_PLATFORMS = [
   { id: "hl", label: "Hargreaves Lansdown", risk: "high" },
   { id: "ajbell", label: "AJ Bell", risk: "high" },
@@ -1308,8 +1308,8 @@ export default function PattyApp() {
   <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "60px 24px" }}>
   <div style={{ width: "100%", maxWidth: 700, textAlign: "center" }}>
   <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: C.accent + "20", color: C.accentDark, borderRadius: 999, padding: "6px 16px", fontSize: 12, fontWeight: 700, marginBottom: 24 }}>FOR US CITIZENS LIVING ABROAD</div>
-  <h1 style={{ fontSize: mobile ? 32 : 50, fontWeight: 900, color: C.primary, lineHeight: 1.1, letterSpacing: -1, marginBottom: 20 }}>Where can you invest?<br /><span style={{ color: C.accent }}>Patty shows you exactly.</span></h1>
-  <p style={{ fontSize: 17, color: C.light, lineHeight: 1.6, maxWidth: 540, margin: "0 auto 32px" }}>Investing abroad as a U.S. citizen is full of hidden tax traps. Patty uses your location to filter safe investment options and direct you to platforms where you can execute.</p>
+  <h1 style={{ fontSize: mobile ? 40 : 64, fontWeight: 900, color: C.primary, lineHeight: 1.05, letterSpacing: -2, marginBottom: 20 }}>Where can you invest?<br /><span style={{ color: C.accent }}>Patty shows you exactly.</span></h1>
+  <p style={{ fontSize: 17, color: C.light, lineHeight: 1.6, maxWidth: 540, margin: "0 auto 32px" }}>Skip the tax traps. Find PFIC-safe investments in seconds.</p>
   <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
   <button onClick={() => setPage("onboard")} style={{ background: `linear-gradient(135deg,${C.accent},${C.accentDark})`, color: "#fff", border: "none", borderRadius: 14, padding: "18px 40px", fontSize: 17, fontWeight: 800, cursor: "pointer", boxShadow: `0 8px 32px ${C.accent}50` }}>Find out where I can invest →</button>
   <button onClick={() => setPage("diagnostic")} style={{ background: "#fff", color: C.primary, border: `2px solid ${C.primary}30`, borderRadius: 14, padding: "18px 24px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Check my existing portfolio</button>
