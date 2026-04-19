@@ -230,7 +230,7 @@ const PLATFORMS = {
   },
 };
 
-// ─── Products ─────────────────────���───────────────────────────────────────────
+// ─── Products ─────────────────────�����───────────────────────────────────────────
 const PRODUCTS = [
   {
   id: "VTI_VXUS",
@@ -655,7 +655,7 @@ function PficCalculator() {
   );
 }
 
-// ─── Portfolio Diagnostic ────────────────────────────────────────────��────────
+// ─── Portfolio Diagnostic ────────────────────────────────────────��───��────────
 const DIAG_PLATFORMS = [
   { id: "hl", label: "Hargreaves Lansdown", risk: "high" },
   { id: "ajbell", label: "AJ Bell", risk: "high" },
@@ -1303,36 +1303,37 @@ export default function PattyApp() {
   const openG = id => { setGTerm(id); setGOpen(true); };
   const Shared = () => <GlossaryModal open={gOpen} initialTerm={gTerm} onClose={() => setGOpen(false)} />;
   if (page === "landing") return (
-  <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'Inter',-apple-system,sans-serif", display: "flex", flexDirection: "column" }}>
+  <div style={{ minHeight: "100vh", background: "#ffffff", fontFamily: "'Inter',-apple-system,sans-serif", display: "flex", flexDirection: "column" }}>
   <Nav onReset={reset} showReset={false} openGlossary={openG} /><Shared />
-  <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "60px 24px" }}>
-  <div style={{ width: "100%", maxWidth: 700, textAlign: "center" }}>
-  <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: C.accent + "20", color: C.accentDark, borderRadius: 999, padding: "6px 16px", fontSize: 12, fontWeight: 700, marginBottom: 24 }}>FOR US CITIZENS LIVING ABROAD</div>
-  <h1 style={{ fontSize: mobile ? 40 : 64, fontWeight: 900, color: C.primary, lineHeight: 1.05, letterSpacing: -2, marginBottom: 20 }}>Where can you invest?<br /><span style={{ color: C.accent }}>Patty shows you exactly.</span></h1>
-  <p style={{ fontSize: 17, color: C.light, lineHeight: 1.6, maxWidth: 540, margin: "0 auto 32px" }}>Skip the tax traps. Find PFIC-safe investments in seconds.</p>
-  <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
-  <button onClick={() => setPage("onboard")} style={{ background: `linear-gradient(135deg,${C.accent},${C.accentDark})`, color: "#fff", border: "none", borderRadius: 14, padding: "18px 40px", fontSize: 17, fontWeight: 800, cursor: "pointer", boxShadow: `0 8px 32px ${C.accent}50` }}>Find out where I can invest →</button>
-  <button onClick={() => setPage("diagnostic")} style={{ background: "#fff", color: C.primary, border: `2px solid ${C.primary}30`, borderRadius: 14, padding: "18px 24px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Check my existing portfolio</button>
+  <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: mobile ? "40px 20px" : "48px 24px" }}>
+  <div style={{ width: "100%", maxWidth: 640, textAlign: "center" }}>
+  <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.primary, color: "#fff", borderRadius: 4, padding: "6px 12px", fontSize: 11, fontWeight: 600, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 20 }}>For US citizens abroad</div>
+  <h1 style={{ fontSize: mobile ? 36 : 56, fontWeight: 700, color: C.primary, lineHeight: 1.1, letterSpacing: -1, marginBottom: 16 }}>Where can you invest?</h1>
+  <p style={{ fontSize: mobile ? 18 : 20, color: C.accent, fontWeight: 600, marginBottom: 12 }}>Patty shows you exactly.</p>
+  <p style={{ fontSize: 15, color: C.light, lineHeight: 1.5, maxWidth: 460, margin: "0 auto 28px" }}>Skip the tax traps. Find PFIC-safe investments in seconds.</p>
+  <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
+  <button onClick={() => setPage("onboard")} style={{ background: C.accent, color: "#fff", border: "none", borderRadius: 8, padding: "14px 28px", fontSize: 15, fontWeight: 600, cursor: "pointer", transition: "background 0.2s" }}>Find where I can invest</button>
+  <button onClick={() => setPage("diagnostic")} style={{ background: "transparent", color: C.primary, border: `1.5px solid ${C.primary}`, borderRadius: 8, padding: "14px 24px", fontSize: 15, fontWeight: 600, cursor: "pointer" }}>Check my portfolio</button>
   </div>
   {/* PFIC calculator — surface early so visitors immediately feel the cost */}
   <div style={{ marginBottom: 28 }}><PficCalculator /></div>
-  <div style={{ display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr 1fr", gap: 14, textAlign: "left", marginBottom: 20 }}>
+  <div style={{ display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr 1fr", gap: 12, textAlign: "left", marginBottom: 20 }}>
   {[{ title: "Why your HL account may not work", body: "Most UK ETFs are classified as tax traps (PFICs) by the IRS. Most UK advisors don't know this applies to US citizens.", tid: "pfic" }, { title: "Why you can't just buy VTI on HL", body: "UK regulations (PRIIPs) block retail brokers from selling US ETFs. HL limits US citizens to individual shares only.", tid: "priips" }, { title: "What actually works", body: "VTI and VXUS via Charles Schwab International — US-domiciled and HMRC-compliant. The one setup that satisfies both tax systems.", tid: "hmrc_reporting" }].map(c => (
-  <div key={c.title} style={{ background: "#fff", borderRadius: 14, padding: "16px", border: "1px solid #e2e8f0" }}>
-  <div style={{ fontWeight: 800, fontSize: 13, color: C.primary, marginBottom: 6 }}>{c.title}</div>
+  <div key={c.title} style={{ background: "#faf5ff", borderRadius: 8, padding: "14px 16px", border: "1px solid #e9d5ff" }}>
+  <div style={{ fontWeight: 600, fontSize: 13, color: C.primary, marginBottom: 6 }}>{c.title}</div>
   <div style={{ fontSize: 12, color: C.light, lineHeight: 1.5, marginBottom: 8 }}>{c.body}</div>
-  <button onClick={() => openG(c.tid)} style={{ background: "none", border: "none", cursor: "pointer", color: C.accent, fontWeight: 700, fontSize: 11, padding: 0 }}>Learn more →</button>
+  <button onClick={() => openG(c.tid)} style={{ background: "none", border: "none", cursor: "pointer", color: C.accent, fontWeight: 600, fontSize: 12, padding: 0 }}>Learn more</button>
   </div>
   ))}
   </div>
-  <div style={{ padding: "14px 20px", background: "#fef9ec", borderRadius: 12, border: "1px solid #fde68a", fontSize: 12, color: "#92400e", lineHeight: 1.6 }}>
-  <strong>Important — please read:</strong> Patty is an educational information service. It maps publicly available IRS and HMRC rules onto general product categories to help US citizens living abroad understand their options. <strong>Patty does not provide personalised financial, tax, or investment advice.</strong> Nothing on this site constitutes a personal recommendation to buy, sell, or hold any specific investment. The information shown describes general product characteristics — not suitability for your specific circumstances. You are solely responsible for your own investment decisions. Tax rules are complex and change frequently; while we endeavour to keep information current, Patty does not warrant the accuracy, completeness, or timeliness of any information presented and accepts no liability for losses or damages arising from reliance on this content. Always consult a US-qualified CPA or tax attorney before making any investment decisions. Patty is not registered with the U.S. Securities and Exchange Commission (SEC) as an investment adviser. Patty is not authorised or regulated by the Financial Conduct Authority (FCA) and does not carry out any regulated activities under the Financial Services and Markets Act 2000. By using this site, you acknowledge and accept these limitations.
+  <div style={{ padding: "12px 16px", background: "#f8fafc", borderRadius: 6, border: "1px solid #e2e8f0", fontSize: 11, color: "#64748b", lineHeight: 1.6 }}>
+  <strong style={{ color: "#475569" }}>Important:</strong> Patty is an educational information service. It maps publicly available IRS and HMRC rules onto general product categories to help US citizens living abroad understand their options. <strong>Patty does not provide personalised financial, tax, or investment advice.</strong> Nothing on this site constitutes a personal recommendation to buy, sell, or hold any specific investment. The information shown describes general product characteristics — not suitability for your specific circumstances. You are solely responsible for your own investment decisions. Tax rules are complex and change frequently; while we endeavour to keep information current, Patty does not warrant the accuracy, completeness, or timeliness of any information presented and accepts no liability for losses or damages arising from reliance on this content. Always consult a US-qualified CPA or tax attorney before making any investment decisions. Patty is not registered with the U.S. Securities and Exchange Commission (SEC) as an investment adviser. Patty is not authorised or regulated by the Financial Conduct Authority (FCA) and does not carry out any regulated activities under the Financial Services and Markets Act 2000. By using this site, you acknowledge and accept these limitations.
   </div>
   </div>
   </div>
-  <div style={{ background: C.primary, padding: "20px 40px" }}>
-  <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 20 }}>
-  {[{ l: "PFIC-Safe Only" }, { l: "HMRC Compliant" }, { l: "US-UK Treaty Grounded" }, { l: "Full Glossary Built-In" }].map(f => <div key={f.l} style={{ display: "flex", alignItems: "center", gap: 10, color: "#fff" }}><span style={{ fontWeight: 700, fontSize: 14 }}>{f.l}</span></div>)}
+  <div style={{ background: C.primary, padding: "16px 32px" }}>
+  <div style={{ maxWidth: 800, margin: "0 auto", display: "flex", justifyContent: "center", flexWrap: "wrap", gap: mobile ? 16 : 32 }}>
+  {[{ l: "PFIC-Safe" }, { l: "HMRC Compliant" }, { l: "US-UK Treaty" }, { l: "Built-In Glossary" }].map(f => <div key={f.l} style={{ display: "flex", alignItems: "center", gap: 6, color: "#fff" }}><span style={{ fontWeight: 500, fontSize: 13 }}>{f.l}</span></div>)}
   </div>
   </div>
   </div>
